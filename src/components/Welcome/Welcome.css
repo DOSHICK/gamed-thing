@@ -1,0 +1,28 @@
+.Welcome__wrapper .Welcome__hola {
+  margin: 60px 0px 0px 0px;
+}
+
+.Welcome__wrapper .Welcome__block {
+  margin: 10px 0px 5px 0px;
+}
+
+.Welcome__wrapper .Welcome__block p {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.Welcome__wrapper .Welcome__block ol {
+  list-style-position: inside;
+}
+
+.Welcome__wrapper a.start {
+  display: inline-block;
+  margin: 10px 0px 0px 0px;
+  padding: 10px 10px 10px 10px;
+  background: #8a3030;
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 15px;
+}
+/*# sourceMappingURL=Welcome.css.map */

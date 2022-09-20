@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+
+import Header from "./components/Header/Header";
+
+import ChoosePerson from "./components/ChoosePerson/ChoosePerson";
+import Fight from "./components/Fight/Fight";
+import Welcome from './components/Welcome/Welcome';
+
+function App(props) {
+  const [person, setPerson] = useState(0);
+  const [monsterHp, setMonsterHp] = useState(0)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path='/' element={<Welcome />} />
+          <Route path='/choose-person' element={<ChoosePerson personsArray={props.personsArray} setPerson={setPerson} />} />
+          <Route path='/fight' element={<Fight personsArray={props.personsArray} person={person} monstersArray={props.monstersArray} setMonsterHp={setMonsterHp} />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
